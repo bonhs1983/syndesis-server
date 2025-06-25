@@ -1,18 +1,17 @@
-// server.js
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import fetch from 'node-fetch';
+
 const app = express();
+const port = process.env.PORT || 3000;
 
-// ✅ Enable CORS only for syndesis.social
-app.use(cors({
-  origin: ['https://syndesis.social', 'http://localhost:3000']
-}));
-
+app.use(cors());
 app.use(express.json());
 
-app.post('/api/tunnel', async (req, res) => {
-  // ...GPT logic here
+app.get('/', (req, res) => {
+  res.send('SYNDESIS backend is working!');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => {
+  console.log(`SYNDESIS Server running on port ${port}`);
+});
