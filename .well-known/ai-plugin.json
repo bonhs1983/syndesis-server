@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Syndesis Inner Architect",
+  "name_for_model": "syndesis_inner_architect",
+  "description_for_human": "Your personal thread architect, tracker and emotional modeler.",
+  "description_for_model": "Helps user process life data, track emotional states, and model decision paths using personalized logic.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://example.com/openapi.yaml"
+  },
+  "logo_url": "https://example.com/logo.png",
+  "contact_email": "support@syndesis.social",
+  "legal_info_url": "https://example.com/legal"
+}
