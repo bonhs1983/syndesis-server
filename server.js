@@ -1,25 +1,21 @@
-import express from 'express';
-import cors from 'cors';
-import fetch from 'node-fetch';
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('SYNDESIS backend is working!');
+app.get("/", (req, res) => {
+  res.send("SYNDESIS backend is working!");
 });
 
-// ✅ Νέο endpoint για μηνύματα από το frontend
-app.post('/message', (req, res) => {
-  const userMessage = req.body.message;
-  console.log('Received message:', userMessage);
-
-  res.json({ reply: `SYNDESIS απάντηση: ${userMessage}` });
+// ✅ ΝΕΟ ENDPOINT ΠΟΥ ΕΨΑΧΝΕΣ
+app.get("/message", (req, res) => {
+  res.json({ message: "SYNDESIS endpoint is working!" });
 });
 
-app.listen(port, () => {
-  console.log(`SYNDESIS Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
